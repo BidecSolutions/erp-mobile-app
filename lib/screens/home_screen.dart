@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/constants/colors.dart';
 import 'package:flutter_app/controllers/navigation_controller.dart';
 import 'package:flutter_app/screens/Leave_Screens/leave_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,43 +14,43 @@ class HomeScreen extends StatelessWidget {
         "title": "Leave",
         "subtitle": "Simplify time-off requests",
         "icon": Icons.calendar_today_rounded,
-        "color": const Color(0xFFFFF3E9),
+        "color": const Color(0xFFFEF2E8),
         "route": const LeaveScreen(),
       },
       {
         "title": "Attendance",
         "subtitle": "Track daily presence easily",
         "icon": Icons.person_outline,
-        "color": const Color(0xFFF2F8E8),
+        "color": const Color(0xFFF1F8EC),
       },
       {
         "title": "Payroll",
         "subtitle": "Track monthly salaries",
         "icon": Icons.account_balance_wallet_outlined,
-        "color": const Color(0xFFF2F0FF),
+        "color": const Color(0xFFF2F0FE),
       },
       {
         "title": "Resignation",
         "subtitle": "Employee offboarding",
         "icon": Icons.work_outline,
-        "color": const Color(0xFFF0F3FA),
+        "color": const Color(0xFFF2F0FE),
       },
       {
         "title": "Loan",
         "subtitle": "Simplify loan requests",
         "icon": Icons.monetization_on_outlined,
-        "color": const Color(0xFFE8F8FF),
+        "color": const Color(0xFFD2F3FB),
       },
       {
         "title": "Documents",
         "subtitle": "Secure document storage",
         "icon": Icons.insert_drive_file_outlined,
-        "color": const Color(0xFFFFF0F4),
+        "color": const Color(0xFFFDEEF3),
       },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
@@ -156,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                       final card = _cards[index];
                       return GestureDetector(
                         onTap: () {
-                          AppNavigator.goToScreen(1); // show leave screen
+                          AppNavigator.goToScreen(1);
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -191,7 +192,7 @@ class HomeScreen extends StatelessWidget {
                                   Text(
                                     card["title"],
                                     style: TextStyle(
-                                      fontSize: 14.sp,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.w800,
                                       color: Colors.black,
                                       fontFamily: 'Satoshi',
@@ -199,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
-                                  SizedBox(height: 6.h),
+                                  SizedBox(height: 4.h),
                                   Row(
                                     children: [
                                       Expanded(

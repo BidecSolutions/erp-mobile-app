@@ -17,13 +17,12 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const NotificationsScreen());
       case '/settings':
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
-        case '/leaveForm':
-  return MaterialPageRoute(builder: (_) => const LeaveFormScreen());
+      case '/leaveForm':
+        return MaterialPageRoute(builder: (_) => const LeaveFormScreen());
       default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
-            body: Center(child: Text('No route defined')),
-          ),
+          builder: (_) =>
+              const Scaffold(body: Center(child: Text('No route defined'))),
         );
     }
   }

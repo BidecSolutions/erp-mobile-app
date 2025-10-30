@@ -44,7 +44,7 @@ class CustomBottomNavBar extends StatelessWidget {
         children: [
           Icon(
             isActive ? filledIcon : outlinedIcon,
-            color: isActive ? Colors.black : Colors.grey,
+            color: isActive ?  Color(0xFF1A7D85) :  Color(0xFF000000),
             size: 24.sp,
           ),
           SizedBox(height: 4.h),
@@ -52,8 +52,8 @@ class CustomBottomNavBar extends StatelessWidget {
             label,
             style: TextStyle(
               fontFamily: 'Satoshi',
-              color: isActive ? Colors.black : Colors.grey,
-              fontSize: 12.sp,
+              color: isActive ? Color(0xFF1A7D85) :  Color(0xFF000000),
+              fontSize: 12.5.sp,
               fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
             ),
           ),
