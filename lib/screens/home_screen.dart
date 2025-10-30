@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/controllers/navigation_controller.dart';
+import 'package:flutter_app/screens/Leave_Screens/leave_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,6 +14,7 @@ class HomeScreen extends StatelessWidget {
         "subtitle": "Simplify time-off requests",
         "icon": Icons.calendar_today_rounded,
         "color": const Color(0xFFFFF3E9),
+        "route": const LeaveScreen(),
       },
       {
         "title": "Attendance",
@@ -152,7 +155,9 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final card = _cards[index];
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          AppNavigator.goToScreen(1); // show leave screen
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: card["color"],
@@ -211,7 +216,7 @@ class HomeScreen extends StatelessWidget {
                                           maxLines: 2,
                                         ),
                                       ),
-                                      SizedBox(width: 5,),
+                                      SizedBox(width: 5),
                                       Icon(
                                         Icons.arrow_forward_ios_rounded,
                                         size: 14.sp,
@@ -219,8 +224,6 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-
-                                
                                 ],
                               );
                             },

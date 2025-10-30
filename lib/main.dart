@@ -1,8 +1,6 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_app/screens/home_screen.dart';
-import 'package:flutter_app/widgets/bottom_nav_bar.dart';
+import 'package:flutter_app/layouts/main_layout.dart'; // 👈 import this
 
 void main() {
   runApp(const MyApp());
@@ -25,41 +23,9 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const MainPage(),
+          home: const MainPage(), // ✅ This comes from mainlayout.dart
         );
       },
-    );
-  }
-}
-
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
-
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _screens = const [
-    HomeScreen(),
-    Center(child: Text("🔔 Notification Screen")),
-    Center(child: Text("⚙️ Settings Screen")),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(index: _selectedIndex, children: _screens),
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedIndex: _selectedIndex,
-        onTabChange: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-      ),
     );
   }
 }
