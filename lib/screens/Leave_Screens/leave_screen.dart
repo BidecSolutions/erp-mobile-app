@@ -75,7 +75,7 @@ class LeaveScreen extends StatelessWidget {
               ),
 
               SizedBox(height: height * 0.03),
-              Divider(thickness: 1, color: Colors.black.withOpacity(0.2)),
+              Divider(thickness: 1, color: Colors.black.withValues(alpha: 0.2)),
 
               // ---------- Total Leaves ----------
               SizedBox(height: height * 0.02),
@@ -195,7 +195,7 @@ class LeaveScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -334,7 +334,7 @@ class LeaveScreen extends StatelessWidget {
   }
 
   Widget _leaveDetailContent(Map<String, dynamic> leave) {
-    Color _getStatusColor(String status) {
+    Color getStatusColor(String status) {
       switch (status.toLowerCase()) {
         case 'approved':
           return Colors.green.shade400;
@@ -376,7 +376,7 @@ class LeaveScreen extends StatelessWidget {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: _getStatusColor(leave["status"] ?? "Pending"),
+                      color: getStatusColor(leave["status"] ?? "Pending"),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(

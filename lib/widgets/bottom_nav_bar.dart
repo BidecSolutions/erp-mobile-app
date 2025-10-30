@@ -21,7 +21,6 @@ class CustomBottomNavBar extends StatelessWidget {
           topLeft: Radius.circular(38.r),
           topRight: Radius.circular(38.r),
         ),
-        // ✅ Shadow removed
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -39,25 +38,35 @@ class CustomBottomNavBar extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => onTabChange(index),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            isActive ? filledIcon : outlinedIcon,
-            color: isActive ?  Color(0xFF1A7D85) :  Color(0xFF000000),
-            size: 24.sp,
-          ),
-          SizedBox(height: 4.h),
-          Text(
-            label,
-            style: TextStyle(
-              fontFamily: 'Satoshi',
-              color: isActive ? Color(0xFF1A7D85) :  Color(0xFF000000),
-              fontSize: 12.5.sp,
-              fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+      child: AnimatedScale(
+        scale: isActive ? 1.1 : 1.0, 
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeOutBack, 
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 250),
+              curve: Curves.easeOut,
+              child: Icon(
+                isActive ? filledIcon : outlinedIcon,
+                color: isActive ? Colors.black : Colors.grey,
+                size: 26.sp,
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 4.h),
+            AnimatedDefaultTextStyle(
+              duration: const Duration(milliseconds: 200),
+              style: TextStyle(
+                fontFamily: 'Satoshi',
+                color: isActive ? Colors.black : Colors.grey,
+                fontSize: isActive ? 13.5.sp : 12.5.sp,
+                fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+              ),
+              child: Text(label),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -3,8 +3,13 @@ import 'package:flutter_app/controllers/navigation_controller.dart';
 import 'package:flutter_app/screens/Leave_Screens/leave_form_screen.dart';
 import 'package:flutter_app/screens/Leave_Screens/leave_history_screen.dart';
 import 'package:flutter_app/screens/Leave_Screens/leave_screen.dart';
+import 'package:flutter_app/screens/attendance_screen.dart';
+import 'package:flutter_app/screens/documents_screen.dart';
 import 'package:flutter_app/screens/home_screen.dart';
+import 'package:flutter_app/screens/loan_screen.dart';
 import 'package:flutter_app/screens/notifications_screen.dart';
+import 'package:flutter_app/screens/payroll_screen.dart';
+import 'package:flutter_app/screens/resignation_screen.dart';
 import 'package:flutter_app/screens/settings_screen.dart';
 import 'package:flutter_app/screens/Leave_Screens/leave_reversal_screen.dart';
 import 'package:flutter_app/widgets/bottom_nav_bar.dart';
@@ -25,6 +30,11 @@ class _MainPageState extends State<MainPage> {
     const NotificationsScreen(key: ValueKey('notifications')),
     const SettingsScreen(key: ValueKey('settings')),
     const LeaveReversalScreen(key: ValueKey('leave_reversal')),
+    const PayrollScreen(key: ValueKey('payroll')),
+    const ResignationScreen(key: ValueKey('resignation')),
+    const DocumentsScreen(key: ValueKey('documents')),
+    const LoanScreen(key: ValueKey('loan')),
+    const AttendanceScreen(key: ValueKey('attendance')),
   ];
 
   @override

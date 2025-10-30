@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/colors.dart';
 import 'package:flutter_app/controllers/navigation_controller.dart';
-import 'package:flutter_app/screens/Leave_Screens/leave_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,43 +8,48 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> _cards = [
+    final List<Map<String, dynamic>> cards = [
       {
         "title": "Leave",
         "subtitle": "Simplify time-off requests",
         "icon": Icons.calendar_today_rounded,
         "color": const Color(0xFFFEF2E8),
-        "route": const LeaveScreen(),
+        "index": 1, // LeaveScreen
       },
       {
         "title": "Attendance",
         "subtitle": "Track daily presence easily",
         "icon": Icons.person_outline,
         "color": const Color(0xFFF1F8EC),
+        "index": 11, // AttendanceScreen
       },
       {
         "title": "Payroll",
         "subtitle": "Track monthly salaries",
         "icon": Icons.account_balance_wallet_outlined,
         "color": const Color(0xFFF2F0FE),
+        "index": 7, // PayrollScreen
       },
       {
         "title": "Resignation",
         "subtitle": "Employee offboarding",
         "icon": Icons.work_outline,
         "color": const Color(0xFFF2F0FE),
+        "index": 8, // ResignationScreen
       },
       {
         "title": "Loan",
         "subtitle": "Simplify loan requests",
         "icon": Icons.monetization_on_outlined,
         "color": const Color(0xFFD2F3FB),
+        "index": 10, // LoanScreen
       },
       {
         "title": "Documents",
         "subtitle": "Secure document storage",
         "icon": Icons.insert_drive_file_outlined,
         "color": const Color(0xFFFDEEF3),
+        "index": 9, // DocumentsScreen
       },
     ];
 
@@ -139,14 +143,13 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(height: 25.h),
 
-              // ✅ Scrollable Grid
               Expanded(
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: _cards.length,
+                    itemCount: cards.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 16.h,
@@ -154,10 +157,11 @@ class HomeScreen extends StatelessWidget {
                       childAspectRatio: 0.98,
                     ),
                     itemBuilder: (context, index) {
-                      final card = _cards[index];
+                      final card = cards[index];
                       return GestureDetector(
                         onTap: () {
-                          AppNavigator.goToScreen(1);
+                          final targetIndex = cards[index]['index'];
+                          AppNavigator.goToScreen(targetIndex);
                         },
                         child: Container(
                           decoration: BoxDecoration(

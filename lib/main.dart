@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_app/layouts/main_layout.dart'; // 👈 import this
+import 'package:flutter_app/layouts/main_layout.dart'; 
 
 void main() {
   runApp(const MyApp());

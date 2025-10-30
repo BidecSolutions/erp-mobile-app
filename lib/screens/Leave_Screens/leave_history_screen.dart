@@ -74,7 +74,7 @@ class _LeaveHistoryScreenState extends State<LeaveHistoryScreen> {
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 4,
                       offset: const Offset(0, 2),
                     ),
@@ -222,7 +222,7 @@ class _LeaveHistoryScreenState extends State<LeaveHistoryScreen> {
             borderRadius: BorderRadius.circular(14),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 4,
                 offset: const Offset(0, 2),
               ),
@@ -313,7 +313,7 @@ class _LeaveHistoryScreenState extends State<LeaveHistoryScreen> {
   }
 
   Widget _leaveDetailContent(Map<String, dynamic> leave) {
-    Color _getStatusColor(String status) {
+    Color getStatusColor(String status) {
       switch (status.toLowerCase()) {
         case 'approved':
           return Colors.green.shade400;
@@ -355,7 +355,7 @@ class _LeaveHistoryScreenState extends State<LeaveHistoryScreen> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: _getStatusColor(leave["status"] ?? "Pending"),
+                      color: getStatusColor(leave["status"] ?? "Pending"),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(

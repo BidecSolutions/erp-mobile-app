@@ -104,7 +104,7 @@ class _LeaveReversalScreenState extends State<LeaveReversalScreen> {
               else
                 ...requestReversalLeaves
                     .map((leave) => _leaveCard(context, leave))
-                    .toList(),
+                    ,
 
               Divider(color: Colors.grey.shade300, height: 30.h),
 
@@ -129,7 +129,7 @@ class _LeaveReversalScreenState extends State<LeaveReversalScreen> {
               else
                 ...approvedLeaves
                     .map((leave) => _leaveCard(context, leave))
-                    .toList(),
+                    ,
             ],
           ),
         ),
@@ -153,7 +153,7 @@ class _LeaveReversalScreenState extends State<LeaveReversalScreen> {
             borderRadius: BorderRadius.circular(14),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 4,
                 offset: const Offset(0, 2),
               ),
@@ -240,7 +240,7 @@ class _LeaveReversalScreenState extends State<LeaveReversalScreen> {
   }
 
   Widget _leaveDetailContent(Map<String, dynamic> leave) {
-    Color _getStatusColor(String status) {
+    Color getStatusColor(String status) {
       switch (status.toLowerCase()) {
         case 'approved':
           return Colors.green.shade400;
@@ -282,7 +282,7 @@ class _LeaveReversalScreenState extends State<LeaveReversalScreen> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: _getStatusColor(leave["status"] ?? "Pending"),
+                      color: getStatusColor(leave["status"] ?? "Pending"),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(
