@@ -23,18 +23,18 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   final List<Widget> _screens = [
-    const HomeScreen(key: ValueKey('home')),
-    const LeaveScreen(key: ValueKey('leave')),
-    const LeaveFormScreen(key: ValueKey('leave_form')),
-    const LeaveHistoryScreen(key: ValueKey('leave_history')),
-    const NotificationsScreen(key: ValueKey('notifications')),
-    const SettingsScreen(key: ValueKey('settings')),
-    const LeaveReversalScreen(key: ValueKey('leave_reversal')),
-    const PayrollScreen(key: ValueKey('payroll')),
-    const ResignationScreen(key: ValueKey('resignation')),
-    const DocumentsScreen(key: ValueKey('documents')),
-    const LoanScreen(key: ValueKey('loan')),
-    const AttendanceScreen(key: ValueKey('attendance')),
+    const HomeScreen(key: ValueKey('home')), //index 0
+    const LeaveScreen(key: ValueKey('leave')), //index 1
+    const LeaveFormScreen(key: ValueKey('leave_form')), //index 2
+    const LeaveHistoryScreen(key: ValueKey('leave_history')), //index 3 
+    const NotificationsScreen(key: ValueKey('notifications')), //index 4
+    const SettingsScreen(key: ValueKey('settings')), //index 5
+    const LeaveReversalScreen(key: ValueKey('leave_reversal')), //index 6
+    const PayrollScreen(key: ValueKey('payroll')), //index 7
+    const ResignationScreen(key: ValueKey('resignation')), //index 8
+    const DocumentsScreen(key: ValueKey('documents')), //index 9
+    const LoanScreen(key: ValueKey('loan')), //index 10
+    const AttendanceScreen(key: ValueKey('attendance')), //index 11
   ];
 
   @override
